@@ -1,3 +1,5 @@
+import CaveIllustration from './CaveIllustration';
+
 export default function Hero() {
   return (
     <section id="top" className="border-b border-stone-200 bg-stone-50">
@@ -47,7 +49,9 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/5] w-full rounded-2xl border border-stone-200 bg-gradient-to-br from-stone-200 via-stone-100 to-amber-50 shadow-sm" />
+          <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
+            <CaveIllustration variant={2} className="h-full w-full" />
+          </div>
           <div className="absolute inset-x-6 bottom-6 rounded-xl border border-stone-200 bg-white p-5 shadow-lg">
             <p className="text-sm font-semibold text-stone-900">
               Cave voûtée · 15e arrondissement

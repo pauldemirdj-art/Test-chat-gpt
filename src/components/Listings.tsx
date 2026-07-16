@@ -1,4 +1,5 @@
 import { listings } from '../data/listings';
+import CaveIllustration from './CaveIllustration';
 
 export default function Listings() {
   return (
@@ -9,31 +10,20 @@ export default function Listings() {
         </h2>
         <p className="mt-3 text-stone-600">
           Une sélection de caves réparties dans plusieurs arrondissements
-          parisiens. Adresses affichées à titre indicatif — l'adresse exacte
-          vous est communiquée après validation de votre demande.
+          parisiens. Adresses et photos affichées à titre indicatif — les
+          photos réelles et l'adresse exacte vous sont communiquées après
+          validation de votre demande.
         </p>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {listings.map((listing) => (
+        {listings.map((listing, index) => (
           <article
             key={listing.id}
             className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-shadow hover:shadow-md"
           >
-            <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-stone-100 to-stone-200 text-stone-400">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                className="h-12 w-12"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"
-                />
-              </svg>
+            <div className="aspect-[4/3] overflow-hidden">
+              <CaveIllustration variant={index} className="h-full w-full" />
             </div>
 
             <div className="flex flex-1 flex-col p-5">
